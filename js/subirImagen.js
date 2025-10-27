@@ -51,12 +51,9 @@ async function subirImagen() {
   }
 
   try {
-    const nombreArchivo = "Imagenes/fotografia.png";
+    const timestamp = Date.now(); 
+    const nombreArchivo = `Imagenes/fotografia_${timestamp}.png`;
     const referencia = ref(storage, nombreArchivo);
-
-    await deleteObject(referencia)
-      .then(() => console.log("Imagen anterior eliminada"))
-      .catch(() => console.warn("No había una imagen anterior"));
 
     await uploadBytes(referencia, file);
 
@@ -66,7 +63,11 @@ async function subirImagen() {
     inputArchivo.value = "";
     inputClave.value = "";
     vista.src = "../recursos/default.png";
+
+    alert("Imagen subida correctamente");
   } catch (error) {
     console.error("Error al subir la imagen:", error);
+    alert("Error al subir la imagen");
   }
+
 }
