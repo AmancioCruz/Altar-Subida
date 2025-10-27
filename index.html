@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Altar - Subir Imagen</title>
+    </head>
+    <body>
+        <div class="contenedor">
+
+            <h2>Subir Imagen al Altar</h2>
+
+            <input type="password" id="clave"
+                placeholder="Ingrese clave de subida">
+
+            <input type="file" id="archivo" accept="image/*">
+            
+                <img id="vistaPrevia" src="recursos/default.png" alt>
+
+            <button id="btnSubir">Subir Imagen</button>
+        </div>
+    </body>
+    <script type="module" src="js/subirImagen.js"></script>
+</html>

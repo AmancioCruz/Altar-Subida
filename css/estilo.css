@@ -1,0 +1,259 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    background: rgba(26, 26, 46, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff6b00;
+    text-align: center;
+}
+
+.contenedor h2 {
+    color: #ff9d00;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.contenedor h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff6b00, #00a2ff, #ff6b00, transparent);
+}
+
+/* Campo de contraseña */
+#clave {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00a2ff;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+#clave:focus {
+    outline: none;
+    border-color: #ff6b00;
+    box-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#clave::placeholder {
+    color: #ccc;
+}
+
+/* Campo de archivo - Ocultar texto y personalizar botón */
+#archivo {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+/* Ocultar el texto del file input */
+#archivo::file-selector-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff6b00, #ff9d00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+}
+
+#archivo::file-selector-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 0, 0.4);
+    background: linear-gradient(135deg, #ff9d00, #ff6b00);
+}
+
+#archivo::file-selector-button:active {
+    transform: translateY(1px);
+}
+
+/* Ocultar el texto que muestra el nombre del archivo */
+#archivo {
+    color: transparent;
+}
+
+#archivo::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+#archivo::before {
+    content: 'Seleccionar Imagen';
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff6b00, #ff9d00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+    text-align: center;
+}
+
+#archivo:hover::before {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 0, 0.4);
+    background: linear-gradient(135deg, #ff9d00, #ff6b00);
+}
+
+#archivo:active::before {
+    transform: translateY(1px);
+}
+
+/* Vista previa de la imagen */
+#vistaPrevia {
+    width: 100%;
+    max-height: 250px;
+    border: 2px dashed #00a2ff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+#vistaPrevia:hover {
+    border-color: #ff6b00;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Botón de subir */
+#btnSubir {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #00a2ff, #0077cc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 162, 255, 0.3);
+    display: block;
+}
+
+#btnSubir:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 162, 255, 0.4);
+    background: linear-gradient(135deg, #0077cc, #00a2ff);
+}
+
+#btnSubir:active {
+    transform: translateY(1px);
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 25px;
+        max-width: 400px;
+    }
+    
+    .contenedor h2 {
+        font-size: 1.6rem;
+    }
+    
+    #vistaPrevia {
+        max-height: 200px;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .contenedor {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .contenedor h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    
+    #clave, #btnSubir {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    #archivo::before {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    #vistaPrevia {
+        max-height: 180px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .contenedor {
+        padding: 15px;
+    }
+    
+    .contenedor h2 {
+        font-size: 1.3rem;
+    }
+    
+    #clave, #btnSubir {
+        padding: 10px;
+    }
+    
+    #archivo::before {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    #vistaPrevia {
+        max-height: 150px;
+    }
+}
