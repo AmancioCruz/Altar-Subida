@@ -38,7 +38,7 @@ async function subirImagen() {
 
   const clave = inputClave.value.trim();
   const file = inputArchivo.files[0];
-  const CLAVE_CORRECTA = "altartelcel2025";
+  const CLAVE_CORRECTA = "altar2025";
 
   if (clave !== CLAVE_CORRECTA) {
     alert("Clave incorrecta");
